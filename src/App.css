@@ -10,7 +10,7 @@ html {
   cursor: url('/icons8-rocket.svg'), auto;
 }
 
-.about, .experience, .projects {
+.experience, .projects {
   cursor: url('/flash-50.png'), auto;
 }
 

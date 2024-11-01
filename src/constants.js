@@ -47,69 +47,69 @@ export const experiences = [
 
 
 export const projects = [
-    {
-        'name': "Ambulance Tracker",
-        'description':
-            "This web app assists hospitals by bridging the communication gap between Ambulance driver and hospital management especially during emergency cases.",
-        'tags': [
-            {
-                'name': "react",
-                'color': "text-blue-500",
-            },
-            {
-                'name': "node",
-                'color': "text-green-500",
-            },
-            {
-                'name': "websockets",
-                'color': "text-pink-500",
-            },
-        ],
-        'image': 'https://opengraph.githubassets.com/ncds33asdhn12dkljipp9/csgeeek/Ambulance-tracker',
-        'source_code_link': "https://github.com/csgeeek/Ambulance-tracker",
-    },
-    {
-        'name': "Scan to Healthify",
-        'description':
-            "This project identifies harmful ingredients in food products by capturing UPC of the barcode with the help of EasyOCR module and then displays the results. ",
-        'tags': [
-            {
-                'name': "react",
-                'color': "text-blue-500",
-            },
-            {
-                'name': "fast api",
-                'color': "text-green-500",
-            },
-            {
-                'name': "firebase",
-                'color': "text-pink-500",
-            },
-        ],
-        'image': 'https://opengraph.githubassets.com/ncds33asdhn12dkljipp9/csgeeek/scan-to-healthify/',
-        'source_code_link': "https://github.com/csgeeek/scan-to-healthify/",
-    },
-    {
-        'name': "Student Profile System",
-        'description':
-            "This project is built in Django and uses MySQL as the database. This webapp provides a central platform to monitor and track Colleges and their respective student profiles.",
-        'tags': [
-            {
-                'name': "django",
-                'color': "text-blue-500",
-            },
-            {
-                'name': "mysql",
-                'color': "text-green-500",
-            },
-            {
-                'name': "bootstrap",
-                'color': "text-pink-500",
-            },
-        ],
-        'image': 'https://opengraph.githubassets.com/ncds33asdhn12dkljipp9/csgeeek/student-profile-system',
-        'source_code_link': "https://github.com/csgeeek/student-profile-system",
-    },
+    // {
+    //     'name': "Ambulance Tracker",
+    //     'description':
+    //         "This web app assists hospitals by bridging the communication gap between Ambulance driver and hospital management especially during emergency cases.",
+    //     'tags': [
+    //         {
+    //             'name': "react",
+    //             'color': "text-blue-500",
+    //         },
+    //         {
+    //             'name': "node",
+    //             'color': "text-green-500",
+    //         },
+    //         {
+    //             'name': "websockets",
+    //             'color': "text-pink-500",
+    //         },
+    //     ],
+    //     'image': 'https://opengraph.githubassets.com/ncds33asdhn12dkljipp9/csgeeek/Ambulance-tracker',
+    //     'source_code_link': "https://github.com/csgeeek/Ambulance-tracker",
+    // },
+    // {
+    //     'name': "Scan to Healthify",
+    //     'description':
+    //         "This project identifies harmful ingredients in food products by capturing UPC of the barcode with the help of EasyOCR module and then displays the results. ",
+    //     'tags': [
+    //         {
+    //             'name': "react",
+    //             'color': "text-blue-500",
+    //         },
+    //         {
+    //             'name': "fast api",
+    //             'color': "text-green-500",
+    //         },
+    //         {
+    //             'name': "firebase",
+    //             'color': "text-pink-500",
+    //         },
+    //     ],
+    //     'image': 'https://opengraph.githubassets.com/ncds33asdhn12dkljipp9/csgeeek/scan-to-healthify/',
+    //     'source_code_link': "https://github.com/csgeeek/scan-to-healthify/",
+    // },
+    // {
+    //     'name': "Student Profile System",
+    //     'description':
+    //         "This project is built in Django and uses MySQL as the database. This webapp provides a central platform to monitor and track Colleges and their respective student profiles.",
+    //     'tags': [
+    //         {
+    //             'name': "django",
+    //             'color': "text-blue-500",
+    //         },
+    //         {
+    //             'name': "mysql",
+    //             'color': "text-green-500",
+    //         },
+    //         {
+    //             'name': "bootstrap",
+    //             'color': "text-pink-500",
+    //         },
+    //     ],
+    //     'image': 'https://opengraph.githubassets.com/ncds33asdhn12dkljipp9/csgeeek/student-profile-system',
+    //     'source_code_link': "https://github.com/csgeeek/student-profile-system",
+    // },
 ];
 
 export const services = [

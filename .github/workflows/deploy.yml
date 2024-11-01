@@ -1,31 +1,84 @@
-name: Deploy to GitHub Pages
+# name: Deploy to GitHub Pages
+
+# on:
+#   push:
+#     branches:
+#       - main  # Change this if you want to deploy from a different branch
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout repo
+#         uses: actions/checkout@v2
+
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '16'  # Specify the Node.js version
+
+#       - name: Install dependencies
+#         run: npm install
+
+#       - name: Build project
+#         run: npm run build
+
+#       - name: Deploy to GitHub Pages
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#           github_token: ${{ secrets.PAT_TOKEN }}
+#           publish_dir: ./dist  # Ensure this matches your build directory
+
+
+name: Node.js CI/CD
 
 on:
   push:
-    branches:
-      - main  # Change this if you want to deploy from a different branch
+    branches: [ main ]  # Listen only on the 'dev' branch
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'  # Specify the Node.js version
+    - name: Install dependencies
+      run: npm install
 
-      - name: Install dependencies
-        run: npm install
+    - name: Build project
+      run: npm run build
 
-      - name: Build project
-        run: npm run build
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: built-files-${{ matrix.node-version }}-${{ github.run_id }}
+        path: dist/
+  
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
+    steps:
+    - uses: actions/checkout@v2
+    - name: Download Built Files for Node 14.x
+      uses: actions/download-artifact@v4
+      with:
+        name: built-files-14.x-${{ github.run_id }}
+        path: dist
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.PAT_TOKEN }}
-          publish_dir: ./dist  # Ensure this matches your build directory

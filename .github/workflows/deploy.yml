@@ -2,9 +2,7 @@ name: Node.js CI/CD
 
 on:
   push:
-    branches: [ main ]  # Listen only on the 'dev' branch
-  pull_request:
-    branches: [ main ]
+    branches: [ dev ]  # Listen only on the 'dev' branc
 
 jobs:
   build:
@@ -30,7 +28,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: built-files-${{ matrix.node-version }}-${{ github.run_id }}
-        path: dist/
+        path: ./dist
   
   deploy:
     needs: build

@@ -56,7 +56,7 @@ name: Build and Deploy
 
 on:
   push:
-    branches: dev
+    branches: main
 
 jobs:
   build:

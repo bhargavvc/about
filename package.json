@@ -10,7 +10,6 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "homepage": "https://bhargav.github.io",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@react-three/drei": "^9.57.3",

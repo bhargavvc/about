@@ -1,1 +1,1 @@
-personal portifolio [me](https://bhargavvc.github.io/about/)
+[personal portifolio](https://bhargavvc.github.io/about/)
